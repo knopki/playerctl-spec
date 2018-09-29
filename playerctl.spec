@@ -6,7 +6,7 @@ Summary:        Command-line MPRIS-compatible Media Player Controller
 Version:        0.6.1
 Release:        2%{?dist}
 URL:            https://github.com/acrisci/playerctl
-Source0:        https://github.com/acrisci/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/acrisci/%{name}/archive/v%{version}.tar.gz
 License:        LGPLv3+
 BuildRequires:  pkgconfig(gobject-2.0)
 BuildRequires:  chrpath
@@ -20,7 +20,7 @@ easy to bind player actions, such as play and pause, to media keys.
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       pkgconfig
 Summary:        Development header files for libplayerctl
-BuildRequires:  gobject-introspection-devel gtk-doc
+BuildRequires:  gobject-introspection-devel gtk-doc make
 Requires:       gobject-introspection-devel gtk-doc
 
 %description devel
@@ -59,13 +59,15 @@ rm -fv %{buildroot}%{_datarootdir}/gir-1.0/*_gir
 %{_mandir}/man1/playerctl*
 
 %files devel
-#doc %{_pkgdocdir}
 %{_datarootdir}/gir-1.0/Playerctl*.gir
 %{_includedir}/playerctl
 %{_libdir}/libplayerctl-*.so
 %{_libdir}/pkgconfig/playerctl-*.pc
 
 %changelog
+* Sat Sep 29 2018 Sergey Korolev <korolev.srg@gmail.com> - 0.6.1-3
+- Fix url to sources and add make dependency
+
 * Sat Sep 29 2018 Sergey Korolev <korolev.srg@gmail.com> - 0.6.1-2
 - Fix url to sources and fix license
 
