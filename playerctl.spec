@@ -6,9 +6,9 @@ Summary:        Command-line MPRIS-compatible Media Player Controller
 Version:        0.6.1
 Release:        2%{?dist}
 URL:            https://github.com/acrisci/playerctl
-Source0:        https://github.com/acrisci/%{name}/releases/download/%{version}/%{name}-%{version}.tar.gz
-License:        GPLv3+
-BuildRequires:	pkgconfig(gobject-2.0)
+Source0:        https://github.com/acrisci/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+License:        LGPLv3+
+BuildRequires:  pkgconfig(gobject-2.0)
 BuildRequires:  chrpath
 
 %description
@@ -66,6 +66,9 @@ rm -fv %{buildroot}%{_datarootdir}/gir-1.0/*_gir
 %{_libdir}/pkgconfig/playerctl-*.pc
 
 %changelog
+* Sat Sep 29 2018 Sergey Korolev <korolev.srg@gmail.com> - 0.6.1-2
+- Fix url to sources and fix license
+
 * Sat Sep 29 2018 Sergey Korolev <korolev.srg@gmail.com> - 0.6.1-1
 - Update to new version
 
